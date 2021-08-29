@@ -18,7 +18,7 @@ pipeline{
             steps {
                rtServer (
                     id: "JFROG",
-                    url: 'http://http://35.184.142.221:8081/artifactory',
+                    url: 'http://35.184.142.221:8081/artifactory',
                     username: 'admin',
                     password: 'Maxima100%',
                     /*bypassProxy: true,*/
