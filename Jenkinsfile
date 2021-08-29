@@ -48,6 +48,21 @@ pipeline{
                 )
             }
         }
+        stage ('Download'){
+            steps{
+                rtDownload (
+                    serverId: 'JFROG',
+                    spec: '''{
+                        "files": [
+                            {
+                            "pattern": "*.war",
+                            "target": "gameoflife"
+                            }
+                        ]
+                    }''',
+                )
+            }
+        }
 
     }
     post {
