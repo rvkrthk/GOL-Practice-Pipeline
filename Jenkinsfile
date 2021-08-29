@@ -1,16 +1,18 @@
 pipeline{
     agent {
-        lable 'JAVA_8'
+        label 'JAVA_8'
     }
     stages{
-        stage{
-            steps ("GIT")
+        stage ('GIT'){
+            steps {
             branch "master"
             git "https://github.com/rvkrthk/GOL-Practice-Pipeline.git"
+            }
         }
-        stage{
-            steps ("MAVEN BUILD")
+        stage ('MAVEN BUILD'){
+            steps {
             sh "mvn clean package"
+            }
         }
         stage ('Server'){
             steps {
